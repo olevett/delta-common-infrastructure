@@ -3,6 +3,11 @@ variable "default_tags" {
   description = "Tags to use for each resource"
 }
 
+variable "environment" {
+  description = "test, staging or production"
+  type = string
+}
+
 variable "vpc" {
   description = "The main VPC"
 }
@@ -18,6 +23,10 @@ variable "subnets" {
 
 variable "public_subnet" {
   description = "Public subnets for management server"
+}
+
+variable "ldaps_ca_subnet" {
+  description = "Subnet for the CA server"
 }
 
 variable "number_of_domain_controllers" {
@@ -40,4 +49,8 @@ variable "management_instance_type" {
   description = "Instance type for the Management EC2 instance"
   type = string
   default = "t3.micro"
+}
+variable "ca_password" {
+  description = "CA Admin password, will be stored in secrets manager"
+  type = string
 }

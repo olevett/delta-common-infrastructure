@@ -17,3 +17,8 @@ variable "directory_admin_password" {
 variable "ad_management_public_key" {
   type = string
 }
+
+variable "ca_password" {
+  type = string
+  description = "Used by the active_directory module"
+}

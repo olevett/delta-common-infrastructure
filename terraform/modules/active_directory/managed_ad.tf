@@ -1,5 +1,5 @@
 resource "aws_directory_service_directory" "directory_service" {
-  name     = "dclgsec.local"
+  name     = "dluhcdata.local"
   password = var.directory_admin_password
   edition  = var.edition
   type     = "MicrosoftAD"

@@ -40,4 +40,7 @@ module "active_directory" {
   number_of_domain_controllers = 2
   ad_management_public_key = var.ad_management_public_key
   directory_admin_password = var.directory_admin_password
+  ldaps_ca_subnet = module.networking.ldaps_ca_subnet
+  environment = "test"
+  ca_password = var.ca_password
 }

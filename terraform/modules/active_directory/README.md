@@ -2,7 +2,7 @@
 
 ## RDP to management server as directory admin:
 
-* Username: dclgsec.local\Administrator
+* Username: dluhcdata.local\Administrator
 * Password: from input variable directory_admin_password
 
 ## First time setup - install management tools:

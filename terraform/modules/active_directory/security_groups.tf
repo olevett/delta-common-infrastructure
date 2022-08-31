@@ -21,3 +21,12 @@ resource "aws_security_group" "ad_management_server" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group_rule" "domain_controllers_to_ca" {
+  type              = "egress"
+  from_port         = 135
+  to_port           = 135
+  protocol          = "tcp"
+  cidr_blocks       = [data.aws_instance.ca_server.private_ip]
+  security_group_id = aws_directory_service_directory.directory_service.security_group_id
+}

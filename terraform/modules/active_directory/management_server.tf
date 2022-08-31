@@ -1,14 +1,3 @@
-data "aws_ami" "windows_server" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["Windows_Server-2019-English-Full-Base-*"]
-  }
-
-  owners = ["amazon"]
-}
-
 resource "aws_instance" "ad_management_server" {
   subnet_id = var.public_subnet.id
   ami           = data.aws_ami.windows_server.id
